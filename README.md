@@ -1,15 +1,30 @@
-# polaris-cloudnative-accounts
-
-## :hammer: Installation
-
-## :mag: Example
-
 ## :blue_book: Documentation
 
-Here are some resources to get you started! If you find any challenges from this project are not properly documented or are unclear, please raise an issueand let us know! This is a fun, safe environment - don't worry if you're a GitHub newbie! :heart:
+Export the following environment variables:
 
-* Quick Start Guide
-* [Rubrik API Documentation](https://github.com/rubrikinc/api-documentation)
+* `POLARIS_SUBDOMAIN`
+* `POLARIS_USERNAME`
+* `POLARIS_PASSWORD`
+* `AWS_ACCOUNT_NUMBER`
+* `AWS_ACCOUNT_NAME`
+* `AWS_REGIONS`
+* `AWS_PROFILE`
+
+The values of `POLARIS_SUBDOMAIN`, `POLARIS_USERNAME`, and `POLARIS_PASSWORD` can also be assigned in each script if you are retrieving from a secret store programmatically somehow. The user in Polaris must have the `Administrator` role.
+
+`AWS_ACCOUNT_NUMBER` is the AWS account number that you want to manage in Polaris.
+
+`AWS_ACCOUNT_NAME` is the name that the AWS account will be given in Polaris. This is only needed when adding accounts.
+
+`AWS_REGIONS` are the regions in AWS that Polaris will manage.  
+    * List should be comma separated list of regions.
+        * Example: `export AWS_REGIONS="us-west-2,us-east-2"
+
+`AWS_PROFILE` is the profile in the local `.aws/credentials` file to use for accessing AWS.
+
+Once configured, run these scripts using Python 3.6+ from an EC2 instance or an external instance. The system that runs this script must have Internet access to Polaris and access to the AWS APIs.
+
+The `polaris-add-aws-cloud-native-account.py` script will add an AWS account to Polaris for Cloud Native protection.
 
 ## :muscle: How You Can Help
 
