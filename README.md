@@ -1,16 +1,31 @@
 ## :blue_book: Documentation
 
+Requirements:
+
+* Python v3.6.5+
+* AWS Python SDK (boto3) v1.7.60+
+* AWS Python SDK (botocore) v1.10.60
+* Python Requests library v2.18.4+
+
 Export the following environment variables:
 
-* `POLARIS_SUBDOMAIN`
-* `POLARIS_USERNAME`
-* `POLARIS_PASSWORD`
-* `AWS_ACCOUNT_NUMBER`
-* `AWS_ACCOUNT_NAME`
-* `AWS_REGIONS`
-* `AWS_PROFILE`
+* All Scripts
+  * `POLARIS_SUBDOMAIN`
+  * `POLARIS_USERNAME`
+  * `POLARIS_PASSWORD`
+  * `AWS_ACCOUNT_NUMBER`
+  * `AWS_PROFILE`
+
+* Account add script
+  * `AWS_ACCOUNT_NAME`
+  * `AWS_REGIONS`
+
+* Account delete script
+  * `POLARIS_DELETE_SNAPSHOTS`
 
 The values of `POLARIS_SUBDOMAIN`, `POLARIS_USERNAME`, and `POLARIS_PASSWORD` can also be assigned in each script if you are retrieving from a secret store programmatically somehow. The user in Polaris must have the `Administrator` role.
+
+`POLARIS_DELETE_SNAPSHOTS` must be set to `true` or `false`. This variable controls if the existing snapshots for the account in AWS will be deleted when the account is deleted.
 
 `AWS_ACCOUNT_NUMBER` is the AWS account number that you want to manage in Polaris.
 
