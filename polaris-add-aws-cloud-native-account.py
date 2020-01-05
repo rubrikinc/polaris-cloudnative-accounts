@@ -2,7 +2,6 @@
 import requests
 import json
 import datetime
-import getpass
 import logging
 import os
 import boto3
