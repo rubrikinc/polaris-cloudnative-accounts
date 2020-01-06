@@ -2,7 +2,6 @@
 import requests
 import json
 import datetime
-import getpass
 import logging
 import os
 import boto3
@@ -86,7 +85,7 @@ try:
         EnableTerminationProtection=False
     )
 except Exception as e:
-    print('Stack Creation failed with error:\n  {}').format(str(e))
+    print('Stack creation failed with error:\n  {}').format(str(e))
 
 waiter = client.get_waiter('stack_create_complete')
 
